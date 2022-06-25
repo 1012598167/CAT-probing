@@ -1,0 +1,121 @@
+06/06/2022 04:59:36 - WARNING - configs -   Process rank: -1, device: cuda, n_gpu: 1, distributed training: False, cpu count: 48
+06/06/2022 04:59:36 - INFO - __main__ -   Namespace(adam_epsilon=1e-08, add_lang_ids=False, add_task_prefix=False, always_save_model=True, attention_batch_size=100, batch_size=32, beam_size=10, cache_path='save_models/summarize/python/t5/cache_data', cpu_count=48, data_dir='/data/pretrain-attention/CodeAttention/data', data_num=-1, device=device(type='cuda'), do_eval=True, do_eval_bleu=True, do_test=True, do_train=True, gpu=0, gradient_accumulation_steps=1, local_rank=-1, lr=5e-05, max_grad_norm=1.0, max_source_length=256, max_target_length=128, model_dir='saved_models', model_name='t5', n_gpu=1, no_cuda=False, num_train_epochs=15, output_dir='save_models/summarize/python/t5', patience=2, res_dir='results/summarize/python/t5', res_fn='results/summarize/python/t5.txt', save_last_checkpoints=True, seed=1234, start_epoch=0, sub_task='python', summary_dir='tensorboard', task='summarize', warmup_steps=1000, weight_decay=0.0)
+06/06/2022 04:59:39 - INFO - models -   Finish loading model [223M] parameters from t5
+06/06/2022 04:59:59 - INFO - utils -   Read 3000 examples, avg src len: 100, avg trg len: 11, max src len: 511, max trg len: 92
+06/06/2022 04:59:59 - INFO - utils -   Sample 5k data for computing bleu/attention from /data/pretrain-attention/CodeAttention/data/summarize/python/train.jsonl
+  0%|          | 0/3000 [00:00<?, ?it/s]  3%|2         | 80/3000 [00:00<00:03, 753.55it/s]  7%|7         | 224/3000 [00:00<00:02, 1099.89it/s] 12%|#2        | 368/3000 [00:00<00:02, 1235.99it/s] 18%|#7        | 528/3000 [00:00<00:01, 1342.74it/s] 25%|##4       | 736/3000 [00:00<00:01, 1597.47it/s] 33%|###2      | 976/3000 [00:00<00:01, 1863.22it/s] 39%|###8      | 1164/3000 [00:00<00:01, 1817.88it/s] 46%|####6     | 1392/3000 [00:00<00:00, 1952.37it/s] 54%|#####3    | 1616/3000 [00:00<00:00, 2032.31it/s] 63%|######2   | 1888/3000 [00:01<00:00, 2206.16it/s] 73%|#######2  | 2176/3000 [00:01<00:00, 2359.74it/s] 80%|########  | 2412/3000 [00:01<00:00, 2267.86it/s] 88%|########8 | 2640/3000 [00:01<00:00, 2232.38it/s] 98%|#########7| 2928/3000 [00:01<00:00, 2411.96it/s]100%|##########| 3000/3000 [00:01<00:00, 2012.59it/s]
+06/06/2022 05:00:00 - INFO - __main__ -   Parse AST trees and obtain leaf tokens
+  0%|          | 0/3000 [00:00<?, ?it/s]  1%|1         | 33/3000 [00:00<00:09, 325.78it/s]  3%|2         | 77/3000 [00:00<00:08, 328.71it/s]  4%|4         | 120/3000 [00:00<00:07, 369.90it/s]  5%|5         | 163/3000 [00:00<00:07, 389.23it/s]  7%|6         | 203/3000 [00:00<00:08, 333.61it/s]  8%|8         | 246/3000 [00:00<00:07, 360.50it/s] 10%|9         | 290/3000 [00:00<00:07, 380.59it/s] 11%|#1        | 330/3000 [00:00<00:07, 380.54it/s] 12%|#2        | 369/3000 [00:01<00:08, 319.66it/s] 14%|#3        | 417/3000 [00:01<00:07, 360.01it/s] 15%|#5        | 456/3000 [00:01<00:07, 346.74it/s] 17%|#6        | 496/3000 [00:01<00:07, 355.52it/s] 18%|#7        | 533/3000 [00:01<00:07, 310.25it/s] 19%|#9        | 580/3000 [00:01<00:07, 344.07it/s] 21%|##        | 626/3000 [00:01<00:06, 369.40it/s] 22%|##2       | 665/3000 [00:01<00:06, 373.64it/s] 24%|##3       | 705/3000 [00:01<00:06, 380.00it/s] 25%|##4       | 744/3000 [00:02<00:07, 318.78it/s] 26%|##6       | 784/3000 [00:02<00:06, 338.29it/s] 27%|##7       | 822/3000 [00:02<00:06, 348.61it/s] 29%|##8       | 859/3000 [00:02<00:06, 349.60it/s] 30%|###       | 906/3000 [00:02<00:05, 379.98it/s] 32%|###1      | 947/3000 [00:02<00:05, 385.65it/s] 33%|###2      | 987/3000 [00:02<00:06, 323.86it/s] 34%|###4      | 1026/3000 [00:02<00:05, 338.74it/s] 35%|###5      | 1062/3000 [00:03<00:05, 324.98it/s] 37%|###6      | 1096/3000 [00:03<00:05, 328.26it/s] 38%|###8      | 1146/3000 [00:03<00:04, 374.12it/s] 40%|###9      | 1199/3000 [00:03<00:04, 417.54it/s] 41%|####1     | 1242/3000 [00:03<00:04, 378.09it/s] 43%|####2     | 1282/3000 [00:03<00:05, 297.77it/s] 44%|####4     | 1324/3000 [00:03<00:05, 325.26it/s] 46%|####5     | 1370/3000 [00:03<00:04, 358.01it/s] 47%|####6     | 1409/3000 [00:04<00:04, 359.27it/s] 48%|####8     | 1449/3000 [00:04<00:04, 367.75it/s] 50%|####9     | 1488/3000 [00:04<00:04, 362.27it/s] 51%|#####1    | 1534/3000 [00:04<00:03, 384.48it/s] 52%|#####2    | 1574/3000 [00:04<00:03, 372.34it/s] 54%|#####3    | 1612/3000 [00:04<00:05, 269.89it/s] 55%|#####5    | 1652/3000 [00:04<00:04, 297.54it/s] 57%|#####6    | 1703/3000 [00:04<00:03, 348.16it/s] 58%|#####8    | 1750/3000 [00:04<00:03, 370.65it/s] 60%|#####9    | 1791/3000 [00:05<00:03, 361.83it/s] 61%|######1   | 1830/3000 [00:05<00:03, 347.75it/s] 62%|######2   | 1867/3000 [00:05<00:03, 343.40it/s] 64%|######3   | 1911/3000 [00:05<00:02, 368.52it/s] 65%|######4   | 1949/3000 [00:05<00:02, 366.95it/s] 67%|######6   | 1997/3000 [00:05<00:02, 398.11it/s] 68%|######7   | 2038/3000 [00:05<00:03, 276.59it/s] 70%|######9   | 2085/3000 [00:06<00:02, 313.25it/s] 71%|#######1  | 2130/3000 [00:06<00:02, 343.73it/s] 72%|#######2  | 2169/3000 [00:06<00:02, 323.60it/s] 74%|#######3  | 2213/3000 [00:06<00:02, 352.19it/s] 75%|#######5  | 2251/3000 [00:06<00:02, 349.45it/s] 76%|#######6  | 2293/3000 [00:06<00:01, 365.31it/s] 78%|#######7  | 2332/3000 [00:06<00:01, 355.79it/s] 79%|#######8  | 2369/3000 [00:06<00:01, 342.58it/s] 80%|########  | 2409/3000 [00:06<00:01, 357.03it/s] 82%|########1 | 2453/3000 [00:07<00:01, 379.76it/s] 83%|########3 | 2492/3000 [00:07<00:02, 243.03it/s] 85%|########4 | 2537/3000 [00:07<00:01, 284.05it/s] 86%|########5 | 2576/3000 [00:07<00:01, 306.94it/s] 87%|########7 | 2612/3000 [00:07<00:01, 317.39it/s] 89%|########8 | 2656/3000 [00:07<00:00, 348.79it/s] 90%|######### | 2700/3000 [00:07<00:00, 369.75it/s] 92%|#########1| 2754/3000 [00:07<00:00, 411.56it/s] 93%|#########3| 2798/3000 [00:08<00:00, 383.65it/s] 95%|#########4| 2845/3000 [00:08<00:00, 406.69it/s] 96%|#########6| 2894/3000 [00:08<00:00, 429.28it/s] 98%|#########7| 2939/3000 [00:08<00:00, 413.01it/s] 99%|#########9| 2984/3000 [00:08<00:00, 421.26it/s]100%|##########| 3000/3000 [00:08<00:00, 352.56it/s]
+06/06/2022 05:00:09 - INFO - __main__ -   Obtain subtokens and their attention
+leaf:  2 start:  (0, 0) , end:  (0, 3) , token:  def
+leaf:  3 start:  (0, 4) , end:  (0, 8) , token:  _pop
+leaf:  5 start:  (0, 8) , end:  (0, 9) , token:  (
+leaf:  6 start:  (0, 9) , end:  (0, 13) , token:  line
+leaf:  7 start:  (0, 13) , end:  (0, 14) , token:  ,
+leaf:  8 start:  (0, 15) , end:  (0, 18) , token:  key
+leaf:  9 start:  (0, 18) , end:  (0, 19) , token:  ,
+leaf:  10 start:  (0, 20) , end:  (0, 28) , token:  use_rest
+leaf:  11 start:  (0, 28) , end:  (0, 29) , token:  )
+leaf:  12 start:  (0, 29) , end:  (0, 30) , token:  :
+leaf:  16 start:  (1, 4) , end:  (1, 7) , token:  '''
+leaf:  17 start:  (10, 4) , end:  (10, 7) , token:  '''
+leaf:  20 start:  (11, 4) , end:  (11, 9) , token:  value
+leaf:  21 start:  (11, 10) , end:  (11, 11) , token:  =
+leaf:  22 start:  (11, 12) , end:  (11, 16) , token:  None
+leaf:  24 start:  (12, 4) , end:  (12, 6) , token:  if
+leaf:  27 start:  (12, 7) , end:  (12, 11) , token:  line
+leaf:  28 start:  (12, 11) , end:  (12, 12) , token:  .
+leaf:  29 start:  (12, 12) , end:  (12, 22) , token:  startswith
+leaf:  31 start:  (12, 22) , end:  (12, 23) , token:  (
+leaf:  32 start:  (12, 23) , end:  (12, 26) , token:  key
+leaf:  33 start:  (12, 26) , end:  (12, 27) , token:  )
+leaf:  34 start:  (12, 27) , end:  (12, 28) , token:  :
+leaf:  38 start:  (13, 8) , end:  (13, 12) , token:  line
+leaf:  39 start:  (13, 13) , end:  (13, 14) , token:  =
+leaf:  43 start:  (13, 15) , end:  (13, 19) , token:  line
+leaf:  44 start:  (13, 19) , end:  (13, 20) , token:  [
+leaf:  47 start:  (13, 20) , end:  (13, 23) , token:  len
+leaf:  49 start:  (13, 23) , end:  (13, 24) , token:  (
+leaf:  50 start:  (13, 24) , end:  (13, 27) , token:  key
+leaf:  51 start:  (13, 27) , end:  (13, 28) , token:  )
+leaf:  52 start:  (13, 28) , end:  (13, 29) , token:  :
+leaf:  53 start:  (13, 29) , end:  (13, 30) , token:  ]
+leaf:  54 start:  (13, 30) , end:  (13, 31) , token:  .
+leaf:  55 start:  (13, 31) , end:  (13, 36) , token:  strip
+leaf:  57 start:  (13, 36) , end:  (13, 37) , token:  (
+leaf:  58 start:  (13, 37) , end:  (13, 38) , token:  )
+leaf:  60 start:  (14, 8) , end:  (14, 10) , token:  if
+leaf:  61 start:  (14, 11) , end:  (14, 19) , token:  use_rest
+leaf:  62 start:  (14, 19) , end:  (14, 20) , token:  :
+leaf:  66 start:  (15, 12) , end:  (15, 17) , token:  value
+leaf:  67 start:  (15, 18) , end:  (15, 19) , token:  =
+leaf:  68 start:  (15, 20) , end:  (15, 24) , token:  line
+leaf:  71 start:  (16, 12) , end:  (16, 16) , token:  line
+leaf:  72 start:  (16, 17) , end:  (16, 18) , token:  =
+leaf:  74 start:  (16, 19) , end:  (16, 20) , token:  '
+leaf:  75 start:  (16, 20) , end:  (16, 21) , token:  '
+leaf:  77 start:  (17, 8) , end:  (17, 12) , token:  else
+leaf:  78 start:  (17, 12) , end:  (17, 13) , token:  :
+leaf:  83 start:  (18, 12) , end:  (18, 17) , token:  value
+leaf:  84 start:  (18, 17) , end:  (18, 18) , token:  ,
+leaf:  85 start:  (18, 19) , end:  (18, 23) , token:  line
+leaf:  86 start:  (18, 24) , end:  (18, 25) , token:  =
+leaf:  89 start:  (18, 26) , end:  (18, 30) , token:  line
+leaf:  90 start:  (18, 30) , end:  (18, 31) , token:  .
+leaf:  91 start:  (18, 31) , end:  (18, 36) , token:  split
+leaf:  93 start:  (18, 36) , end:  (18, 37) , token:  (
+leaf:  95 start:  (18, 37) , end:  (18, 38) , token:  '
+leaf:  96 start:  (18, 39) , end:  (18, 40) , token:  '
+leaf:  97 start:  (18, 40) , end:  (18, 41) , token:  ,
+leaf:  98 start:  (18, 42) , end:  (18, 43) , token:  1
+leaf:  99 start:  (18, 43) , end:  (18, 44) , token:  )
+leaf:  101 start:  (19, 4) , end:  (19, 10) , token:  return
+leaf:  103 start:  (19, 11) , end:  (19, 16) , token:  value
+leaf:  104 start:  (19, 16) , end:  (19, 17) , token:  ,
+leaf:  107 start:  (19, 18) , end:  (19, 22) , token:  line
+leaf:  108 start:  (19, 22) , end:  (19, 23) , token:  .
+leaf:  109 start:  (19, 23) , end:  (19, 28) , token:  strip
+leaf:  111 start:  (19, 28) , end:  (19, 29) , token:  (
+leaf:  112 start:  (19, 29) , end:  (19, 30) , token:  )
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112]
+[(0, 1), (1, 2), (1, 3), (1, 4), (1, 12), (1, 13), (4, 5), (4, 6), (4, 7), (4, 8), (4, 9), (4, 10), (4, 11), (13, 14), (13, 18), (13, 23), (13, 100), (14, 15), (15, 16), (15, 17), (18, 19), (19, 20), (19, 21), (19, 22), (23, 24), (23, 25), (23, 34), (23, 35), (25, 26), (25, 30), (26, 27), (26, 28), (26, 29), (30, 31), (30, 32), (30, 33), (35, 36), (35, 59), (36, 37), (37, 38), (37, 39), (37, 40), (40, 41), (40, 56), (41, 42), (41, 54), (41, 55), (42, 43), (42, 44), (42, 45), (42, 53), (45, 46), (45, 52), (46, 47), (46, 48), (48, 49), (48, 50), (48, 51), (56, 57), (56, 58), (59, 60), (59, 61), (59, 62), (59, 63), (59, 76), (63, 64), (63, 69), (64, 65), (65, 66), (65, 67), (65, 68), (69, 70), (70, 71), (70, 72), (70, 73), (73, 74), (73, 75), (76, 77), (76, 78), (76, 79), (79, 80), (80, 81), (81, 82), (81, 86), (81, 87), (82, 83), (82, 84), (82, 85), (87, 88), (87, 92), (88, 89), (88, 90), (88, 91), (92, 93), (92, 94), (92, 97), (92, 98), (92, 99), (94, 95), (94, 96), (100, 101), (100, 102), (102, 103), (102, 104), (102, 105), (105, 106), (105, 110), (106, 107), (106, 108), (106, 109), (110, 111), (110, 112)]
+raw_code:  def _pop(line, key, use_rest):
+    '''
+    Helper for the line parser.
+
+    If key is a prefix of line, will remove ir from the line and will
+    extract the value (space separation), and the rest of the line.
+
+    If use_rest is True, the value will be the rest of the line.
+
+    Return a tuple with the value and the rest of the line.
+    '''
+    value = None
+    if line.startswith(key):
+        line = line[len(key):].strip()
+        if use_rest:
+            value = line
+            line = ''
+        else:
+            value, line = line.split(' ', 1)
+    return value, line.strip()
+leaves:  [2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 16, 17, 20, 21, 22, 24, 27, 28, 29, 31, 32, 33, 34, 38, 39, 43, 44, 47, 49, 50, 51, 52, 53, 54, 55, 57, 58, 60, 61, 62, 66, 67, 68, 71, 72, 74, 75, 77, 78, 83, 84, 85, 86, 89, 90, 91, 93, 95, 96, 97, 98, 99, 101, 103, 104, 107, 108, 109, 111, 112]
+example length: 3000
+ast list length 3000
+tokens list length 3000
+tokens 0: 
+{2: 'def', 3: '_pop', 5: '(', 6: 'line', 7: ',', 8: 'key', 9: ',', 10: 'use_rest', 11: ')', 12: ':', 16: "'''", 17: "'''", 20: 'value', 21: '=', 22: 'None', 24: 'if', 27: 'line', 28: '.', 29: 'startswith', 31: '(', 32: 'key', 33: ')', 34: ':', 38: 'line', 39: '=', 43: 'line', 44: '[', 47: 'len', 49: '(', 50: 'key', 51: ')', 52: ':', 53: ']', 54: '.', 55: 'strip', 57: '(', 58: ')', 60: 'if', 61: 'use_rest', 62: ':', 66: 'value', 67: '=', 68: 'line', 71: 'line', 72: '=', 74: "'", 75: "'", 77: 'else', 78: ':', 83: 'value', 84: ',', 85: 'line', 86: '=', 89: 'line', 90: '.', 91: 'split', 93: '(', 95: "'", 96: "'", 97: ',', 98: '1', 99: ')', 101: 'return', 103: 'value', 104: ',', 107: 'line', 108: '.', 109: 'strip', 111: '(', 112: ')'}
+tokens type 0: 
+{2: 'def', 3: 'identifier', 5: '(', 6: 'identifier', 7: ',', 8: 'identifier', 9: ',', 10: 'identifier', 11: ')', 12: ':', 16: '"', 17: '"', 20: 'identifier', 21: '=', 22: 'none', 24: 'if', 27: 'identifier', 28: '.', 29: 'identifier', 31: '(', 32: 'identifier', 33: ')', 34: ':', 38: 'identifier', 39: '=', 43: 'identifier', 44: '[', 47: 'identifier', 49: '(', 50: 'identifier', 51: ')', 52: ':', 53: ']', 54: '.', 55: 'identifier', 57: '(', 58: ')', 60: 'if', 61: 'identifier', 62: ':', 66: 'identifier', 67: '=', 68: 'identifier', 71: 'identifier', 72: '=', 74: '"', 75: '"', 77: 'else', 78: ':', 83: 'identifier', 84: ',', 85: 'identifier', 86: '=', 89: 'identifier', 90: '.', 91: 'identifier', 93: '(', 95: '"', 96: '"', 97: ',', 98: 'integer', 99: ')', 101: 'return', 103: 'identifier', 104: ',', 107: 'identifier', 108: '.', 109: 'identifier', 111: '(', 112: ')'}
+Computing attention:   0%|          | 0/30 [00:00<?, ?it/s]Computing attention:   3%|3         | 1/30 [00:02<01:06,  2.28s/it]Computing attention:   7%|6         | 2/30 [00:03<00:51,  1.85s/it]Computing attention:  10%|#         | 3/30 [00:05<00:48,  1.79s/it]Computing attention:  13%|#3        | 4/30 [00:07<00:44,  1.72s/it]Computing attention:  17%|#6        | 5/30 [00:08<00:40,  1.63s/it]Computing attention:  20%|##        | 6/30 [00:10<00:38,  1.58s/it]Computing attention:  23%|##3       | 7/30 [00:11<00:35,  1.55s/it]Computing attention:  27%|##6       | 8/30 [00:13<00:33,  1.53s/it]Computing attention:  30%|###       | 9/30 [00:14<00:31,  1.51s/it]Computing attention:  33%|###3      | 10/30 [00:16<00:30,  1.50s/it]Computing attention:  37%|###6      | 11/30 [00:17<00:28,  1.50s/it]Computing attention:  40%|####      | 12/30 [00:19<00:26,  1.49s/it]Computing attention:  43%|####3     | 13/30 [00:20<00:25,  1.49s/it]Computing attention:  47%|####6     | 14/30 [00:21<00:23,  1.49s/it]Computing attention:  50%|#####     | 15/30 [00:23<00:22,  1.49s/it]Computing attention:  53%|#####3    | 16/30 [00:24<00:20,  1.48s/it]Computing attention:  57%|#####6    | 17/30 [00:26<00:19,  1.48s/it]Computing attention:  60%|######    | 18/30 [00:27<00:17,  1.48s/it]Computing attention:  63%|######3   | 19/30 [00:29<00:16,  1.48s/it]Computing attention:  67%|######6   | 20/30 [00:31<00:15,  1.54s/it]Computing attention:  70%|#######   | 21/30 [00:32<00:13,  1.53s/it]Computing attention:  73%|#######3  | 22/30 [00:34<00:12,  1.52s/it]Computing attention:  77%|#######6  | 23/30 [00:35<00:10,  1.51s/it]Computing attention:  80%|########  | 24/30 [00:37<00:09,  1.50s/it]Computing attention:  83%|########3 | 25/30 [00:38<00:07,  1.49s/it]Computing attention:  87%|########6 | 26/30 [00:39<00:05,  1.49s/it]Computing attention:  90%|######### | 27/30 [00:41<00:04,  1.49s/it]Computing attention:  93%|#########3| 28/30 [00:43<00:03,  1.52s/it]Computing attention:  97%|#########6| 29/30 [00:44<00:01,  1.50s/it]Computing attention: 100%|##########| 30/30 [00:45<00:00,  1.50s/it]Computing attention: 100%|##########| 30/30 [00:46<00:00,  1.54s/it]
+len(attention_list) 30
+special tokens:  ['<extra_id_0>', '<extra_id_1>', '<extra_id_2>', '<extra_id_3>', '<extra_id_4>', '<extra_id_5>', '<extra_id_6>', '<extra_id_7>', '<extra_id_8>', '<extra_id_9>', '<extra_id_10>', '<extra_id_11>', '<extra_id_12>', '<extra_id_13>', '<extra_id_14>', '<extra_id_15>', '<extra_id_16>', '<extra_id_17>', '<extra_id_18>', '<extra_id_19>', '<extra_id_20>', '<extra_id_21>', '<extra_id_22>', '<extra_id_23>', '<extra_id_24>', '<extra_id_25>', '<extra_id_26>', '<extra_id_27>', '<extra_id_28>', '<extra_id_29>', '<extra_id_30>', '<extra_id_31>', '<extra_id_32>', '<extra_id_33>', '<extra_id_34>', '<extra_id_35>', '<extra_id_36>', '<extra_id_37>', '<extra_id_38>', '<extra_id_39>', '<extra_id_40>', '<extra_id_41>', '<extra_id_42>', '<extra_id_43>', '<extra_id_44>', '<extra_id_45>', '<extra_id_46>', '<extra_id_47>', '<extra_id_48>', '<extra_id_49>', '<extra_id_50>', '<extra_id_51>', '<extra_id_52>', '<extra_id_53>', '<extra_id_54>', '<extra_id_55>', '<extra_id_56>', '<extra_id_57>', '<extra_id_58>', '<extra_id_59>', '<extra_id_60>', '<extra_id_61>', '<extra_id_62>', '<extra_id_63>', '<extra_id_64>', '<extra_id_65>', '<extra_id_66>', '<extra_id_67>', '<extra_id_68>', '<extra_id_69>', '<extra_id_70>', '<extra_id_71>', '<extra_id_72>', '<extra_id_73>', '<extra_id_74>', '<extra_id_75>', '<extra_id_76>', '<extra_id_77>', '<extra_id_78>', '<extra_id_79>', '<extra_id_80>', '<extra_id_81>', '<extra_id_82>', '<extra_id_83>', '<extra_id_84>', '<extra_id_85>', '<extra_id_86>', '<extra_id_87>', '<extra_id_88>', '<extra_id_89>', '<extra_id_90>', '<extra_id_91>', '<extra_id_92>', '<extra_id_93>', '<extra_id_94>', '<extra_id_95>', '<extra_id_96>', '<extra_id_97>', '<extra_id_98>', '<extra_id_99>']
+after formatting, subtokens 0:
+Traceback (most recent call last):
+  File "/data/pretrain-attention/CodeAttention/attention.py", line 489, in <module>
+    main()
+  File "/data/pretrain-attention/CodeAttention/attention.py", line 477, in main
+    args, subtokens_list, tokens_list, tokens_type_list, tokenizer)
+  File "/data/pretrain-attention/CodeAttention/attention.py", line 107, in number_subtoken
+    print(subtokens)
+UnicodeEncodeError: 'ascii' codec can't encode character '\u2581' in position 2: ordinal not in range(128)

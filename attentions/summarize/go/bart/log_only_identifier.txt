@@ -1,0 +1,18 @@
+06/12/2022 13:29:23 - WARNING - configs -   Process rank: -1, device: cuda, n_gpu: 1, distributed training: False, cpu count: 48
+06/12/2022 13:29:23 - INFO - __main__ -   Namespace(adam_epsilon=1e-08, add_lang_ids=False, add_task_prefix=False, always_save_model=True, attention_batch_size=100, batch_size=48, beam_size=10, cache_path='save_models/summarize/go/bart/cache_data', cpu_count=48, data_dir='/data/pretrain-attention/CodeAttention/data', data_num=-1, device=device(type='cuda'), do_eval=True, do_eval_bleu=True, do_test=True, do_train=True, gpu=0, gradient_accumulation_steps=1, local_rank=-1, lr=5e-05, max_grad_norm=1.0, max_source_length=256, max_target_length=128, model_dir='saved_models', model_name='bart', n_gpu=1, no_cuda=False, num_train_epochs=15, output_dir='save_models/summarize/go/bart', patience=2, res_dir='results/summarize/go/bart', res_fn='results/summarize/go/bart.txt', save_last_checkpoints=True, seed=1234, start_epoch=0, sub_task='go', summary_dir='tensorboard', task='summarize', warmup_steps=1000, weight_decay=0.0)
+Traceback (most recent call last):
+  File "/data/pretrain-attention/CodeAttention/attention.py", line 592, in <module>
+    main()
+  File "/data/pretrain-attention/CodeAttention/attention.py", line 541, in main
+    config, model, tokenizer = bulid_or_load_gen_model(args)
+  File "/data/pretrain-attention/CodeAttention/models.py", line 41, in bulid_or_load_gen_model
+    config = AutoConfig.from_pretrained(checkpoint)
+  File "/root/anaconda3/envs/plbart/lib/python3.6/site-packages/transformers/models/auto/configuration_auto.py", line 558, in from_pretrained
+    config_dict, _ = PretrainedConfig.get_config_dict(pretrained_model_name_or_path, **kwargs)
+  File "/root/anaconda3/envs/plbart/lib/python3.6/site-packages/transformers/configuration_utils.py", line 558, in get_config_dict
+    user_agent=user_agent,
+  File "/root/anaconda3/envs/plbart/lib/python3.6/site-packages/transformers/file_utils.py", line 1499, in cached_path
+    local_files_only=local_files_only,
+  File "/root/anaconda3/envs/plbart/lib/python3.6/site-packages/transformers/file_utils.py", line 1716, in get_from_cache
+    "Connection error, and we cannot find the requested files in the cached path."
+ValueError: Connection error, and we cannot find the requested files in the cached path. Please try again or make sure your Internet connection is on.

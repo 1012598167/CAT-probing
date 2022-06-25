@@ -1,0 +1,14 @@
+<class 'encodings.utf_8.StreamWriter'>
+<encodings.utf_8.StreamWriter object at 0x7ff7750e54e0>
+06/13/2022 10:15:32 - WARNING - configs -   Process rank: -1, device: cuda, n_gpu: 1, distributed training: False, cpu count: 48
+06/13/2022 10:15:32 - INFO - __main__ -   Namespace(adam_epsilon=1e-08, add_lang_ids=False, add_task_prefix=False, always_save_model=True, attention_batch_size=100, batch_size=48, beam_size=10, cache_path='save_models/summarize/ruby/codebert/cache_data', cpu_count=48, data_dir='/data/pretrain-attention/CodeAttention/data', data_num=-1, device=device(type='cuda'), do_eval=True, do_eval_bleu=True, do_test=True, do_train=True, frequent_type=True, gpu=0, gradient_accumulation_steps=1, local_rank=-1, lr=5e-05, max_grad_norm=1.0, max_source_length=256, max_target_length=128, model_dir='saved_models', model_name='codebert', n_gpu=1, no_cuda=False, num_train_epochs=15, output_dir='save_models/summarize/ruby/codebert', patience=2, res_dir='results/summarize/ruby/codebert', res_fn='results/summarize/ruby/codebert.txt', save_last_checkpoints=True, seed=1234, start_epoch=0, sub_task='ruby', summary_dir='tensorboard', task='summarize', warmup_steps=1000, weight_decay=0.0)
+06/13/2022 10:15:35 - INFO - models -   Finish loading model [173M] parameters from codebert
+Traceback (most recent call last):
+  File "/data/pretrain-attention/CodeAttention/attention.py", line 619, in <module>
+    main()
+  File "/data/pretrain-attention/CodeAttention/attention.py", line 572, in main
+    model.load_state_dict(torch.load(model_dict))
+  File "/root/anaconda3/envs/plbart/lib/python3.6/site-packages/torch/nn/modules/module.py", line 847, in load_state_dict
+    self.__class__.__name__, "\n\t".join(error_msgs)))
+RuntimeError: Error(s) in loading state_dict for Seq2Seq:
+	Missing key(s) in state_dict: "encoder.embeddings.position_ids". 
